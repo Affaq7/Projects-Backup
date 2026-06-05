@@ -1,0 +1,26 @@
+/*
+  test1_factorial.rc
+  RetroC Test Program #1: Factorial Computation
+  -----------------------------------------------
+  Demonstrates: for-loops, arithmetic operators (*),
+                function declaration and call, return values.
+
+  Expected Output:
+    Program finished. Return value of main(): 120
+    (because 5! = 1*2*3*4*5 = 120)
+*/
+
+int factorial(int n) {
+    int result;
+    result = 1;
+    for (int i = 1; i <= n; i = i + 1) {
+        result = result * i;
+    }
+    return result;
+}
+
+int main() {
+    int x;
+    x = factorial(5);
+    return x;
+}

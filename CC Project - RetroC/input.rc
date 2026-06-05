@@ -1,0 +1,43 @@
+/*int square(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int x;
+    bool flag;
+    char letters[3];
+
+    x = true;          // Semantic Error: assigning bool to int
+    flag = 5;          // Semantic Error: assigning int to bool
+    int c =;           // Syntax Error : Not assigning of value
+    y = 10;            
+    letters = 'A';    
+    letters[0]='a';
+    letters[flag] = 'Z'; // Semantic Error: index must be integer 
+    letters[4]='b'; // Semantic Error: array out of bound access 
+    addsd(x);      //Semantic Error: function undeclared semantic     
+    square(5);  //Semantic Error : Argument count mismatched
+    square(3,'a'); //Semantic Error: Argument Type mismatched
+    for(int i=0;i<3;i++){
+        letters[i]='a';
+    }
+    return 'c';      //Semantic Error : Return type not consistent                 
+}
+*/
+
+int factorial(int n) {
+    int result;
+    result = 1;
+    for(int i=1; i<n; i++){
+        result = result * i;
+    }
+    return result;
+}
+
+int main() {
+    int x;
+    x = factorial(5);
+    int sum;
+    sum = 10 + 6;
+    return sum;
+}

@@ -1,0 +1,29 @@
+/*
+  test2_constant_fold.rc
+  RetroC Test Program #2: Constant Folding Demo
+  -----------------------------------------------
+  Demonstrates: compile-time constant folding optimization.
+  The optimizer will reduce all the arithmetic at compile time
+  before the VM ever runs them.
+
+  Optimization Demo:
+    sum = 10 + 6       => optimizer folds to: sum = 16
+    product = 3 * 7    => optimizer folds to: product = 21
+    diff = product - sum => NOT folded (variables, not literals)
+
+  Expected Output:
+    [Constant Folding] 10 + 6  =>  16
+    [Constant Folding] 3 * 7   =>  21
+    Program finished. Return value of main(): 5
+    (because 21 - 16 = 5)
+*/
+
+int main() {
+    int sum;
+    int product;
+    int diff;
+    sum = 10 + 6;
+    product = 3 * 7;
+    diff = product - sum;
+    return diff;
+}

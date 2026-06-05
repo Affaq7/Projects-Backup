@@ -1,0 +1,28 @@
+/*
+  test3_if_else.rc
+  RetroC Test Program #3: Conditional Branching & Boolean Logic
+  --------------------------------------------------------------
+  Demonstrates: if/else statements, boolean variables,
+                relational operators (>), logical operators (&&).
+
+  Expected Output:
+    Program finished. Return value of main(): 1
+    (because x=15 is > 10, so isLarge=true,
+     and the condition (isLarge && true) is true,
+     so we take the if-branch and return 1)
+*/
+
+int main() {
+    int x;
+    x = 15;
+    bool isLarge;
+    isLarge = x > 10;
+    int result;
+    result = 0;
+    if (isLarge && true) {
+        result = 1;
+    } else {
+        result = 0;
+    }
+    return result;
+}

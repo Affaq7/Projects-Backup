@@ -1,0 +1,37 @@
+/*
+  test4_multi_functions.rc
+  RetroC Test Program #4: Multiple Functions & Summation
+  -------------------------------------------------------
+  Demonstrates: multiple helper functions, nested function calls,
+                for-loop accumulator, integer division.
+
+  Algorithm:
+    sumTo(n)    computes 1 + 2 + ... + n.
+    average(n)  calls sumTo(n) then divides by n.
+    main()      calls average(10).
+
+  Expected Constant Folding output:  (none — operands are variables)
+
+  Expected Output:
+    Program finished. Return value of main(): 5
+    (because 1+2+...+10 = 55, and 55 / 10 = 5 in integer division)
+*/
+
+int sumTo(int n) {
+    int sum;
+    sum = 0;
+    for (int i = 1; i <= n; i = i + 1) {
+        sum = sum + i;
+    }
+    return sum;
+}
+
+int average(int n) {
+    int total;
+    total = sumTo(n);
+    return total / n;
+}
+
+int main() {
+    return average(10);
+}

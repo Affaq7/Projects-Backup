@@ -1,0 +1,38 @@
+/*
+  test5_semantic_errors.rc
+  RetroC Test Program #5: Semantic Error Detection
+  --------------------------------------------------
+  Demonstrates: the compiler's semantic analysis phase catching
+  real programming mistakes before execution.
+
+  This file is intentionally INCORRECT — it showcases the compiler's
+  error reporting capability. The compiler should report all errors
+  below without crashing.
+
+  Expected Compiler Output (Semantic Errors):
+    [Line ~10] Semantic Error: Type mismatch - cannot assign 'bool' to 'int'
+    [Line ~11] Semantic Error: Type mismatch - cannot assign 'int' to 'bool'
+    [Line ~12] Semantic Error: Undeclared variable 'y'
+    [Line ~13] Semantic Error: Undeclared function 'foo'
+    [Line ~14] Semantic Error: Argument count mismatch for 'add' (expected 2, got 1)
+    [Line ~15] Semantic Error: Return type mismatch in function 'getValue'
+*/
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int getValue() {
+    return true;        // Semantic Error: int function returning bool
+}
+
+int main() {
+    int x;
+    bool flag;
+    x = true;           // Semantic Error: bool assigned to int
+    flag = 5;           // Semantic Error: int assigned to bool
+    y = 10;             // Semantic Error: undeclared variable
+    foo(x);             // Semantic Error: undeclared function
+    add(5);             // Semantic Error: wrong argument count
+    return 0;
+}
